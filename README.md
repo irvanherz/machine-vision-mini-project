@@ -2,6 +2,13 @@
 
 Ini adalah sebuah project sederhana untuk memenuhi tugas seleksi Machine Vision. Dibuat dengan prinsip minimalis, sederhana dan secepat mungkin.
 
+Demo yang ditunjukkan dalam project ini antara lain.
+
+- Basic CRUD
+- Routing
+- Theming
+- Error handling (berdasarkan: response server, koneksi internet, validasi data dan validasi input)
+
 ## Package yang Dipakai
 
 Project ini dibangun dengan React (CRA), dengan beberapa library pembantu sebagai berikut.
@@ -54,10 +61,12 @@ npm start
 
 Tersedia juga live demo yang dapat diakses melalui link berikut ini.
 
-[Demo](https://example.com)
+[Demo](https://lovely-axolotl-539b49.netlify.app)
 
 ## Preview
 
-![Home](https://i.imgur.com/5aBV13W.png)
+![Home](https://i.imgur.com/sGlnIiq.png)
 
-![Post](https://i.imgur.com/FqSDfcP.png)
+![manage Users](https://i.imgur.com/NWZGI5b.png)
+
+![Manage Posts](https://i.imgur.com/cjAgZg5.png)
