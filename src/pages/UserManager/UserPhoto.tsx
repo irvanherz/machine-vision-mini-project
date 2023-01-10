@@ -4,7 +4,7 @@ import {
 import { Image } from 'antd'
 import { CSSProperties, useState } from 'react'
 import styled from 'styled-components'
-import { DEFAULT_IMAGE, imageErrorHandler } from '../../libs/common'
+import { DEFAULT_PHOTO, imageErrorHandler } from '../../libs/common'
 
 type UserPhotoProps = {
   src?: string
@@ -49,10 +49,10 @@ export default function UserPhoto ({ src, style }: UserPhotoProps) {
   return (
     <Container style={style}>
       <div className='wrapper'>
-        <img src={src} onError={imageErrorHandler}/>
+        <img src={src || DEFAULT_PHOTO} onError={imageErrorHandler}/>
         <button onClick={handleToggleVisible}><EyeOutlined style={{ color: '#FFF' }} /></button>
       </div>
-      <Image src={src || DEFAULT_IMAGE} fallback={DEFAULT_IMAGE} hidden preview={{ visible, onVisibleChange: setVisible }} />
+      <Image src={src || DEFAULT_PHOTO} fallback={DEFAULT_PHOTO} hidden preview={{ visible, onVisibleChange: setVisible }} />
     </Container>
   )
 }

@@ -49,7 +49,7 @@ export default function PostImage ({ src, style }: PostImageProps) {
   return (
     <Container style={style}>
       <div className='wrapper'>
-        <img src={src} onError={imageErrorHandler}/>
+        <img src={src || DEFAULT_IMAGE} onError={imageErrorHandler}/>
         <button onClick={handleToggleVisible}><EyeOutlined style={{ color: '#FFF' }} /></button>
       </div>
       <Image src={src || DEFAULT_IMAGE} fallback={DEFAULT_IMAGE} hidden preview={{ visible, onVisibleChange: setVisible }} />
