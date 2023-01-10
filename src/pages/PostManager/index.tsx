@@ -55,7 +55,7 @@ export default function PostManager () {
   const handleAfterCreated = () => {
     notification.success({
       message: 'Success',
-      description: 'User created successfully',
+      description: 'Post created successfully',
       duration: 3
     })
     refetch()

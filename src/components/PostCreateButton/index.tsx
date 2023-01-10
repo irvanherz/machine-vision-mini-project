@@ -32,6 +32,15 @@ export default function PostCreateButton ({ children, afterCreated }: PostCreate
       }
     })
   }
+
+  const handleValidationError = () => {
+    notification.error({
+      message: 'Error',
+      description: 'Check all fields and then try again',
+      duration: 3
+    })
+  }
+
   return (
     <>
       {children && cloneElement(children, { onClick: handleToggleOpen })}
@@ -48,7 +57,9 @@ export default function PostCreateButton ({ children, afterCreated }: PostCreate
         <Form
           labelCol={{ span: 24 }}
           wrapperCol={{ span: 24 }}
-          form={form} onFinish={handleSubmit}
+          form={form}
+          onFinish={handleSubmit}
+          onFinishFailed={handleValidationError}
         >
           <PostForm />
         </Form>

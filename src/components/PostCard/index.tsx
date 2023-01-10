@@ -1,7 +1,7 @@
 import { Card, Space, Tag, Typography } from 'antd'
 import { useMemo } from 'react'
 import styled from 'styled-components'
-import { imageErrorHandler } from '../../libs/common'
+import { DEFAULT_IMAGE, imageErrorHandler } from '../../libs/common'
 import PostDetailsButton from '../PostDetailsButton'
 
 type PostCardProps = {
@@ -32,7 +32,7 @@ export default function PostCard ({ post }: PostCardProps) {
     <PostDetailsButton postId={post.id}>
       <StyledCard
         hoverable
-        cover={<img alt="example" src={post.image} onError={imageErrorHandler} />}
+        cover={<img alt="example" src={post.image || DEFAULT_IMAGE} onError={imageErrorHandler} />}
       >
         <Card.Meta
           title={`${post.owner.firstName} ${post.owner.lastName}`}

@@ -52,7 +52,7 @@ export default function UserPhoto ({ src, style }: UserPhotoProps) {
         <img src={src} onError={imageErrorHandler}/>
         <button onClick={handleToggleVisible}><EyeOutlined style={{ color: '#FFF' }} /></button>
       </div>
-      <Image src={src} fallback={DEFAULT_IMAGE} hidden preview={{ visible, onVisibleChange: setVisible }} />
+      <Image src={src || DEFAULT_IMAGE} fallback={DEFAULT_IMAGE} hidden preview={{ visible, onVisibleChange: setVisible }} />
     </Container>
   )
 }

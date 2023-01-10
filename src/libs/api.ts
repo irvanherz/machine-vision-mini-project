@@ -1,3 +1,10 @@
+function translateErrorData (err: any): string {
+  const errData = err?.response?.data?.data
+  if (!errData) return ''
+  const messages = Object.values(errData)
+  return messages[0] as string
+}
+
 export class ApiError extends Error {
   constructor (e: any) {
     let message = 'Something went wrong'
@@ -15,6 +22,10 @@ export class ApiError extends Error {
       const t = e.response?.data?.error || 'OTHER'
       const type = (typeof t === 'string' ? t : 'OTHER') as keyof typeof MAP
       message = MAP[type] || MAP.OTHER
+      if (t === 'BODY_NOT_VALID') {
+        const replacement = translateErrorData(e)
+        if (e) message = replacement
+      }
     } else if (e.request) {
       // The request was made but no response was received
       // `error.request` is an instance of XMLHttpRequest in the browser and an instance of

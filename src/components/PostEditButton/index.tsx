@@ -30,6 +30,7 @@ export default function PostEditButton ({ postId, children, afterUpdated }: Post
   }, [post])
 
   const handleToggleOpen = () => setOpen(!open)
+
   const handleSubmit = (values:any) => {
     updater.mutate(values, {
       onSuccess: () => {
@@ -45,6 +46,15 @@ export default function PostEditButton ({ postId, children, afterUpdated }: Post
       }
     })
   }
+
+  const handleValidationError = () => {
+    notification.error({
+      message: 'Error',
+      description: 'Check all fields and then try again',
+      duration: 3
+    })
+  }
+
   return (
     <>
       {children && cloneElement(children, { onClick: handleToggleOpen })}
@@ -63,6 +73,7 @@ export default function PostEditButton ({ postId, children, afterUpdated }: Post
           wrapperCol={{ span: 24 }}
           form={form}
           onFinish={handleSubmit}
+          onFinishFailed={handleValidationError}
         >
           <PostForm />
         </Form>
