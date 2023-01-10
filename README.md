@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# Machine Vision Mini Project (machine-vision-mini-project)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ini adalah sebuah project sederhana untuk memenuhi tugas seleksi Machine Vision. Dibuat dengan prinsip minimalis, sederhana dan secepat mungkin.
 
-## Available Scripts
+## Package yang Dipakai
 
-In the project directory, you can run:
+Project ini dibangun dengan React (CRA), dengan beberapa library pembantu sebagai berikut.
+- antd
+- react-query
+- react-router-dom
+- axios
+- styled-components
 
-### `npm start`
+## Cara Menjalankan
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Pertama-tama, clone project ini ke device Anda.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+gt clone https://github.com/irvanherz/machine-vision-mini-project.git
+```
 
-### `npm test`
+Lalu masuk ke folder `machine-vision-mini-project`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+cd machine-vision-mini-project
+```
 
-### `npm run build`
+Buat file `.env` dari template `.env.template` yang sudah disertakan di repo.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+cp .env.template .env
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Tentukan kredensial APP_ID di file `.env`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+REACT_APP_API_BASEURL=https://dummyapi.io
+REACT_APP_API_APPID=#YOUR_APP_ID#
+```
 
-### `npm run eject`
+Jika sudah, maka Anda telah siap. Lanjutkan dengan instalasi dependensi.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Terakhir, jalankan project dengan perintah berikut.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Demo
 
-## Learn More
+Tersedia juga live demo yang dapat diakses melalui link berikut ini.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Demo](https://example.com)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Preview
+
+![Home](https://i.imgur.com/5aBV13W.png)
+
+![Post](https://i.imgur.com/FqSDfcP.png)

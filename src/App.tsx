@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ConfigProvider, theme } from 'antd'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import useThemeContext from './hooks/useThemeContext'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
+import PostManager from './pages/PostManager'
+import UserManager from './pages/UserManager'
 
-function App() {
+const router = createBrowserRouter([
+  {
+    id: '/',
+    path: '/',
+    element: <Home />
+  },
+  {
+    id: '/users',
+    path: '/users',
+    element: <UserManager />
+  },
+  {
+    id: '/posts',
+    path: '/posts',
+    element: <PostManager />
+  },
+  {
+    id: '*',
+    path: '*',
+    element: <NotFound />
+  }
+])
+
+function App () {
+  const tc = useThemeContext()
+  const algorithm = tc.theme === 'light' ? theme.defaultAlgorithm : theme.darkAlgorithm
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ConfigProvider theme={{ algorithm }}>
+        <RouterProvider router={router} />
+      </ConfigProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
